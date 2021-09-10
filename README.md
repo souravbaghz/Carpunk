@@ -56,3 +56,6 @@ CARPUNK IS VERY SIMILAR TO CANghost, ONLY THE DEFFERENCE IS, IT COMES WITH OPTIO
 [![Medium souravbaghz](https://img.shields.io/badge/medium-%2312100E.svg?&style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@souravbaghz)
 
 ---
+### Thanks To:
++ [@linux-can](https://github.com/linux-can) for [can-utils](https://github.com/linux-can/can-utils)
++ [@Craig Smith](https://github.com/zombieCraig) for [ICSim](https://github.com/zombieCraig/ICSim)
