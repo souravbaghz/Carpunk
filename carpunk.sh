@@ -88,7 +88,7 @@ if [[ $option = 1 || $option = 01 ]]
        then
          echo -e "${red}+${reset}------------------------------------${red}+${reset}"
          msg="       Happy Car Hacking"
-         cansniffer $i
+         cansniffer $i -c
 		 read -r -s -p $'Press ENTER to go menu.'
          clear
 		 menu
@@ -107,8 +107,8 @@ if [[ $option = 1 || $option = 01 ]]
        then
          echo -e "${red}+${reset}------------------------------------${red}+${reset}"
          msg="    Replay Attack Completed"
-         read -p "[?]Enter log name: " $log
-         canplayer -I logs/$log
+         read -p "[?]Enter log name: " logname
+         canplayer -I logs/$logname
          clear
 		 menu
 		  	 
