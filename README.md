@@ -2,26 +2,28 @@
   <img  width="500" src="src/Watch_Dogs_2.gif" />
 </p>
 
-<h1 align="center"> <b>CarPunk</b></h1>
-<h2 align="center"><b>The Car Hacking Toolkit</b></h3> 
+<h1 align="center"> <b>Carpunk v2</b></h1>
+<h2 align="center"><b>CAN Injection|Car Hacking Toolkit</b></h3> 
 
 ### What's New:
 
-CARPUNK IS VERY SIMILAR TO CANghost, ONLY THE DEFFERENCE IS, IT COMES WITH OPTIONS TO ENABLE OR DISABLE INTERFACE AND BASIC SNIFFING AS EXTRA. 
-+ IT WORKS ON BOTH SIMULATION & REAL CARS.
-+ HAS THE OPTIONS TO RECORD AND PLAY THE CAN PACKETS.
-+ NO ANY ARGUMENTS REQUIRED WHEN RUNNING BUT NEED CHANGES(Interface & Name for logfile), IF YOU'RE TRYING IN REAL-WORLD.
-+ TESTED ON UBUNTU WITH BOTH SIMULATOR & REAL CARS.
+Carpunk is a CAN Injection Toolkit and an updated version of CANghost. Now it comes with some extra options like enable/disable the interface, basic sniffing, and the best part, it has some CAN Injection related vulnerabilities.
+
++ It works for both Simulation & Real cars.
++ Two more CAN injection attacks are added.
++ Tested on Ubuntu and Parrot OS.
 ***
-#### THINGS TO DO BEFORE RUNNING CARPUNK:
-+ YOU HAVE TO LOAD YOUR CANBUS DRIVER MANUALLY, CARPUNK ONLY DOES UP AND DOWN.
-+ OPEN carpunk.sh FILE INTO YOUR FAVORITE TEXT-EDITOR AND CHANGE THE INTERFACE AND LOG-FILENAME AS PER YOUR NEED. DELAFULT INTERFCE IS vcan0 & carpunk AS LOG-FILENAME.
+#### Things to note before running Carpunk:
++ You have to load your canbus driver yourself, the script makes canbus interface up and down only.
++ Now you have to pass an argument for your canbus interface.
++ Your logs file will be named as carpunk1.log,carpunk2.log and so on if you're using in one shot. If you restart the script then it will create carpunk1.log again and your previously created carpunk1.log will be deleted.
++ Copy your all logs file somewhere else before starting the carpunk script.
 
 
 + **Installation & Usage of CarPunk :**
  ```
- git clone https://github.com/souravbaghz/CarPunk
- cd CarPunk
+ git clone https://github.com/souravbaghz/Carpunk
+ cd Carpunk
  sudo bash carpunk.sh
  ```
  ***
@@ -29,11 +31,13 @@ CARPUNK IS VERY SIMILAR TO CANghost, ONLY THE DEFFERENCE IS, IT COMES WITH OPTIO
   <img src="src/carpunk.png" />
 </p>
 
-+ [1] UP the CAN Interface     : To Enable/UP the CAN Interface.
-+ [2] Down the CAN Interface   : Make The CAN Interface Down.
-+ [3] Start the Basic Sniffing : To Start Sniffing Only(get terminal clear as soon as you stop it by ctrl+c).
-+ [4] Record the CAN Packets   : To Capture/Record The CAN Packets Into File(as carpunk1.log- name will be carpunk2.log,carpunk3.log,so on for multiple times).
-+ [5] Play the CAN Packets     : Replay The CAN Packets Which You Captured Earlier(Need to specify the log-file. e.g: carpunk1.log).
++ [1] Up The CAN Interface     : Enable/UP the CAN Interface.
++ [2] Down The CAN Interface   : Make The CAN Interface Down.
++ [3] Start The Basic Sniffing : Start Sniffing Only(get terminal clear as soon as you stop it by ctrl+c).
++ [4] Record The CAN Packets   : Capture/Record The CAN Packets Into File(as carpunk1.log- name will be carpunk2.log,carpunk3.log,so on for multiple times).
++ [5] Play The CAN Packets     : Replay The CAN Packets Which You Captured Earlier(specify the log-file. e.g: carpunk1.log).
++ [6] CAN Injection DOS Attack : Perform DOS Attack Through CAN Injection.
++ [7] ECU Hard Reset           : ECU Hard Reset 
 + [0] Exit                     : To Exit The CarPunk Script.
 
  
@@ -59,3 +63,4 @@ CARPUNK IS VERY SIMILAR TO CANghost, ONLY THE DEFFERENCE IS, IT COMES WITH OPTIO
 ### Thanks To:
 + [@linux-can](https://github.com/linux-can) for [can-utils](https://github.com/linux-can/can-utils)
 + [@Craig Smith](https://github.com/zombieCraig) for [ICSim](https://github.com/zombieCraig/ICSim)
++ [@Jay Turla](https://github.com/shipcod3)
