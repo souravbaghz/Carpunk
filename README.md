@@ -1,5 +1,5 @@
 <p align="center">
-  <img  width="400" src="src/carpunkv2.png" />
+  <img  width="400" src="src/carpunk-logo.png" />
 </p>
 
 <h1 align="center"> <b>Carpunk v2</b></h1>
