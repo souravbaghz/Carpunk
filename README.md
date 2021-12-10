@@ -18,6 +18,7 @@ Carpunk is a CAN Injection Toolkit and an updated version of CANghost. Now it co
 + Now you have to pass an argument for your canbus interface.
 + Your logs file will be named as carpunk1.log,carpunk2.log and so on if you're using in one shot. If you restart the script then it will create carpunk1.log again and your previously created carpunk1.log will be deleted.
 + Copy your all logs file somewhere else before starting the carpunk script.
++ I am not responsible for any damage to your vehicle and illegal activities with this toolkit. Use at your own risk. 
 
 
 + **Installation & Usage of CarPunk :**
