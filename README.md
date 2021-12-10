@@ -1,5 +1,5 @@
 <p align="center">
-  <img  width="500" src="src/Watch_Dogs_2.gif" />
+  <img  width="500" src="src/carpunk.png" />
 </p>
 
 <h1 align="center"> <b>Carpunk v2</b></h1>
@@ -28,7 +28,7 @@ Carpunk is a CAN Injection Toolkit and an updated version of CANghost. Now it co
  ```
  ***
  <p align="center">
-  <img src="src/carpunk.png" />
+  <img src="src/carpunk-banner.png" />
 </p>
 
 + [1] Up The CAN Interface     : Enable/UP the CAN Interface.
