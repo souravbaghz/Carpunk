@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center"> <b>Carpunk v2</b></h1>
-<h2 align="center"><b>CAN Injection|Car Hacking Toolkit</b></h3> 
+<h2 align="center"><b>CAN Injection | Car Hacking Toolkit</b></h3> 
 
 ### What's New:
 
