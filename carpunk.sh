@@ -150,7 +150,7 @@ if [[ $option = 1 || $option = 01 ]]
        then
          echo -e " ──────────────────────────────"
          msg="    ECU Hard Reset Packet Sent!"
-		 read -p "[?]Enter UDS Arbitary-ID:" AID
+		 read -p "[?]Enter UDS Arbitrary-ID:" AID
          cansend $interface $AID#0211010000000000
          clear
 		 menu
