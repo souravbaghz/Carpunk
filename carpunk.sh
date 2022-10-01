@@ -142,7 +142,7 @@ if [[ $option = 1 || $option = 01 ]]
          echo -e " ──────────────────────────────"
          msg="    ECU Hard Reset Completed"
          cansend $interface 7DF#0211010000000000
-         cansend $interface 7E1#0211010000000000
+         #cansend $interface 7E1#0211010000000000
          clear
 		 menu
 		 	
