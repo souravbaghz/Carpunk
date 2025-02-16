@@ -68,13 +68,13 @@ clear
 banner
 echo -e "$bold$green$msg$reset"
 echo -e " ──────────────────────────────$reset"
-echo -e "$red [1]$green UP The CAN Interface"
-echo -e "$red [2]$green Down The CAN Interface"
-echo -e "$red [3]$green Start The Basic Sniffing"
-echo -e "$red [4]$green Record The CAN Packets"
-echo -e "$red [5]$green Play The CAN Packets"
-echo -e "$red [6]$green CAN Injection DOS Attack"
-echo -e "$red [7]$green ECU Hard Reset(7DF & 7E1 only)"
+echo -e "$red [1]$green CAN Interface Up"
+echo -e "$red [2]$green CAN Interface Down"
+echo -e "$red [3]$green Start the Sniffing"
+echo -e "$red [4]$green Record the CAN Frames"
+echo -e "$red [5]$green Play the CAN Frames"
+echo -e "$red [6]$green DOS Attack (0x000)"
+echo -e "$red [7]$green ECU Hard Reset(0x7DF)"
 echo -e "$red [8]$green ECU Hard Reset with Custom ID"
 
 echo -e "$red [0]$green Exit$reset"
@@ -119,7 +119,7 @@ if [[ $option = 1 || $option = 01 ]]
          echo -e " ──────────────────────────────"
          msg="    Replay Attack Completed"
          read -p "[?]Enter log name: " logname
-         echo -e "$green Playing CAN Packets..."
+         echo -e "$green Playing CAN Frames..."
          canplayer -I logs/$logname
          clear
 		 menu
@@ -149,7 +149,7 @@ if [[ $option = 1 || $option = 01 ]]
 	elif [[ $option = 8 || $option = 08 ]]
        then
          echo -e " ──────────────────────────────"
-         msg="    ECU Hard Reset Packet Sent!"
+         msg="    ECU Hard Reset Request Sent!"
 		 read -p "[?]Enter UDS Arbitrary-ID:" AID
          cansend $interface $AID#0211010000000000
          clear
@@ -164,7 +164,7 @@ if [[ $option = 1 || $option = 01 ]]
         else
 		echo "Invalid Option..."
 		sleep 1
-        msg="   Oops! It's incorrect option"
+        msg="   Oops! It's Incorrect Option"
 		clear
 		menu
 	fi	
