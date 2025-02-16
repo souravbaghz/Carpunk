@@ -32,19 +32,19 @@ Carpunk is a CAN Injection Toolkit and an updated version of CANghost. Now it co
   <img src="src/carpunk-banner.png" />
 </p>
 
-+ [1] Up The CAN Interface     : Enable/UP the CAN Interface.
-+ [2] Down The CAN Interface   : Make The CAN Interface Down.
-+ [3] Start The Basic Sniffing : Start Sniffing Only(get terminal clear as soon as you stop it by ctrl+c).
-+ [4] Record The CAN Packets   : Capture/Record The CAN Packets Into File(as carpunk1.log- name will be carpunk2.log,carpunk3.log,so on for multiple times).
-+ [5] Play The CAN Packets     : Replay The CAN Packets Which You Captured Earlier(specify the log-file. e.g: carpunk1.log).
-+ [6] CAN Injection DOS Attack : Perform DOS Attack Through CAN Injection.
++ [1] CAN Interface Up         : Enable/UP the CAN Interface.
++ [2] CAN Interface Down       : Make The CAN Interface Down.
++ [3] Start the Sniffing       : Start Sniffing Only(terminal gets cleared as soon as you stop it by ctrl+c).
++ [4] Record the CAN Frames    : Capture/Record The CAN Packets Into File(as carpunk1.log- name will be carpunk2.log,carpunk3.log,so on for multiple times).
++ [5] Play the CAN Frames      : Replay The CAN Packets Which You Captured Earlier(specify the log-file. e.g: carpunk1.log).
++ [6] CAN DOS Attack           : Perform DOS Attack using 0x000(lowest) Arbitration ID.
 + [7] ECU Hard Reset           : ECU Hard Reset 
 + [0] Exit                     : To Exit The CarPunk Script.
 
  
  ***
  
- ### If You Do Love My Works Then You Can Buy Me A Coffee Now.
+ ### If you like my works, you can buy me a coffee here.
  <a href="https://www.buymeacoffee.com/souravbaghz" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
  
  ***
@@ -58,7 +58,7 @@ Carpunk is a CAN Injection Toolkit and an updated version of CANghost. Now it co
 [![Instagram: souravbaghz](https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/souravbaghz)
 [![GitHub souravbaghz](https://img.shields.io/badge/github-%23000000.svg?&style=for-the-badge&logo=github)](https://github.com/souravbaghz)
 [![Twitter souravbaghz](https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/souravbaghz)
-[![Medium souravbaghz](https://img.shields.io/badge/medium-%2312100E.svg?&style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@souravbaghz)
+[![Medium baudskidninja](https://img.shields.io/badge/medium-%2312100E.svg?&style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@baudskidninja)
 
 ---
 ### Thanks To:
